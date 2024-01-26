@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Household goods for the home and garden">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations-магазин хозтоваров</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/icomoon/icomoon.css">
+</head>
+<body>
+    <!-- Burger -->
+    <header class="header">
+        <button class="burger-btn" id="burger" aria-label="Бургер меню">
+            <span></span><span></span><span></span>
+        </button>
+        <!-- Mobile search -->
+        <div class="mobile-search" id="mobile-search" aria-hidden="true">
+            <div class="mobile-search__content">
+                <form class="form" action="" method="post">
+                    <input class="mobile-search__search-input" type="search" id="search" placeholder="Поиск по сайту.." aria-label="Поле поиска">
+                    <button class="mobile-search__search-btn" aria-label="Начать поиск" id=""><i class="icon-search"></i></button>	
+                </form>
+            </div>
+        </div>
+        <!-- Modal entrance -->
+        <div class="modal" aria-hidden="true" data-modal="1">
+            <div class="modal__content">
+                <form class="modal__form" action="" method="post" id="form">
+                    <svg class="modal__close js-close-modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <h2 class="title">Вход/Регистрация</h2>
+                    <div class="form-item">
+                        <label class="form-label" for="email">E-Mail:</label>
+                        <input class="form-input" type="email" id="email">
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label" for="password">Пароль:</label>
+                        <input class="form-input" type="password" id="password">
+                    </div>
+                </form>
+                <div class="flex-box modal__bottom">
+                    <label for="checkbox-remember">
+                        <input class="checkbox-remember" type="checkbox" id="checkbox-remember">
+                        Запомнить меня
+                    </label>
+                    <a href="#!">Забыли пароль?</a>
+                </div>
+                <button class="modal__btn-entrance btn-modal">Войти</button>
+                <a class="modal__a-reg btn-modal" href="">Зарегистрироваться</a>
+            </div>
+        </div>
+        <!-- Modal feadback -->
+        <div class="modal" aria-hidden="true" data-modal="2">
+            <div class="modal__content">
+                <form class="modal__form" action="" method="post" id="form">
+                    <svg class="modal__close js-close-modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"/></svg>
+                    <h2 class="title">Обратная связь</h2>
+                    <div class="form-item">
+                        <label class="form-label" for="name">Имя:</label>
+                        <input class="form-input" type="text" id="name">
+                    </div>
+                    <div class="form-item">
+                        <label class="form-label" for="tel">Номер телефона:</label>
+                        <input class="form-input" type="tel" id="tel" placeholder="(0)__ __ __">
+                    </div>
+                </form>
+                <button class="modal__btn-entrance btn-modal">Свяжитесь со мной</button>
+            </div>
+        </div>
+        <div class="modal__overlay js-overlay-modal"></div>
+        <!-- Header top -->
+        <div class="header-top">
+            <div class="container flex-box gap">
+                <nav class="nav header-top__nav padding">
+                    <ul class="flex-box gap">
+                        <li><a href="#!">О магазине</a></li>
+                        <li><a href="#!">Доставка и оплата</a></li>
+                        <li><a href="#!">Гарантии</a></li>
+                        <li><a href="#!">Вопрос-Ответ</a></li>
+                        <li><a href="#!">Сотрудничество</a></li>
+                        <li><a href="#!">Статьи</a></li>
+                        <li><a href="#!">Новости</a></li>
+                        <li><a href="#!">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="header-top__modal-window flex">
+                    <button class="feadback-btn padding js-open-modal" data-modal="2">
+                        <i class="icon-comment"></i><span class="none-first">Обратная связь</span>
+                    </button>
+                    <button class="reg-btn padding js-open-modal" data-modal="1">
+                        <i class="icon-user"></i><span class="none-first">Вход/</span>
+                        <span class="none-first">Регистрация</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Header mobile -->
+        <div class="header-mobile flex-box">
+            <img class="logo" src="img/logo.png" alt="Логотип">
+            <div>
+                <button class="search-btn open-mobile-search" aria-label="Начать поиск" id="open-mobile-search"><i class="icon-search"></i></button>
+                <button class="js-open-modal" data-modal="2"><i class="icon-comment" aria-label="Обратная связь"></i></button>
+                <button class="js-open-modal" data-modal="1"><i class="icon-user" aria-label="Регистрация/Вход"></i></button>
+                <a class="header-middle__favorites" href="#!" aria-label="Избранное"><i class="icon-heart color-pink"></i></a>
+                <a class="header-middle__basket" href="#!" aria-label="Корзина"><i class="icon-cart-plus color-pink"></i></a>     
+            </div>
+        </div>
+        <!-- Header middle -->
+        <div class="header-middle">
+            <div class="container flex-box">
+                <img class="logo" src="img/logo.png" alt="Логотип">
+                <p class="none-first">Доставка за 2-4 дня</p>
+                <form class="search-form" action="" method="get">
+                    <input class="search-input" type="search" id="search" placeholder="Поиск по сайту.." aria-label="Поле поиска">
+                    <button class="search-btn" aria-label="Начать поиск" id=""><i class="icon-search"></i></button>
+                </form>
+                <a class="header-middle__telephone none-two" href="tel:11111111111"><i class="icon-phone color-pink"></i>11111111111</a>
+                <a class="header-middle__favorites" href="#"><i class="icon-heart color-pink"></i><span class="none">Избранное</span><br><span class="header-middle__span-left color-gray none">На потом</span></a>
+                <a class="header-middle__basket" href="#"><i class="icon-cart-plus color-pink"></i><span class="none">Ваша корзина</span><br><span class="header-middle__span-right color-gray none">Пока ещё пусто</span></a>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <ul class="flex-box">
+                    <li class="catalog"><a class="header-bottom__catalog padding" href="#!"><i class="icon-dedent"></i>Каталог товаров<i class="icon-long-arrow-down"></i></a>
+                        <ul class="dropdown-content-color-light">
+                            <li class="dropdown-item"><a href="#"><i class="icon-battery"></i><br>Батарейки</a>
+                                <ul class="dropdown-content-color-dark">
+                                    <li><a href="#!">Пунтк 1</a></li>
+                                    <li><a href="#!">Пункт 2</a></li>
+                                    <li><a href="#!">Пункт 3</a></li>
+                                    <li><a href="#!">Пунтк 4</a></li>
+                                    <li><a href="#!">Пункт 5</a></li>
+                                    <li><a href="#!">Пункт 6</a></li>
+                                    <li><a href="#!">Пунтк 1</a></li>
+                                    <li><a href="#!">Пункт 2</a></li>
+                                    <li><a href="#!">Пункт 3</a></li>
+                                    <li><a href="#!">Пунтк 4</a></li>
+                                    <li><a href="#!">Пункт 5</a></li>
+                                    <li><a href="#!">Пункт 6</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><a href="#!"><i class="icon-plug"></i><br>Для дома</a>
+                                <ul class="dropdown-content-color-dark">
+                                    <li><a href="#!">Пунтк 1</a></li>
+                                    <li><a href="#!">Пункт 2</a></li>
+                                    <li><a href="#!">Пункт 3</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><a href="#"><i class="icon-leaf"></i><br>Для cада</a>
+                                <ul class="dropdown-content-color-dark">
+                                    <li><a href="#!">Пунтк 1</a></li>
+                                    <li><a href="#!">Пункт 2</a></li>
+                                    <li><a href="#!">Пункт 3</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="header-bottom__sale padding"><a href="#!">% Все акционные товары</a></li>
+                    <li class="header-bottom__new padding"><a href="#!">New Новые поступления</a></li>
+                    <li class="header-bottom__social padding"><a href="@telegram"><img class="icon" src="img/telegram-color.png" alt="icontelegram">Телеграм-канал "Cong"</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <!-- Main page -->
+        <section class="main-page flex">
+            <div class="slider-arrow">
+                <div class="slider-arrow__nav">
+                    <button class="slider-arrow__arrow slider-arrow--left" aria-label="Листать слайды влево"><</button>
+                    <a class="a-link" href="#!">Каталог</a>
+                    <button class="slider-arrow__arrow slider-arrow--right" aria-label="Листать слайды вправо">></button>
+                </div>
+                <div class="slider-arrow__items">
+                    <a href="#!"><img class="slider-arrow__item" src="img/slider-item1.jpg" alt="Осенняя распродажа"></a>
+                    <a href="#!"><img class="slider-arrow__item" src="img/slider-item2.jpg" alt="Новогодние скидки 50%"></a>
+                    <a href="#!"><img class="slider-arrow__item" src="img/slider-item3.jpg" alt="2 по цене одного"></a>
+                </div> 
+            </div>
+            <div class="banners-block">
+                <div class="banners-block__top">
+                    <a href="#!"><img src="img/banner-sale.jpg" alt="Скидки"></a>
+                </div>
+                <div class="banners-block__down flex">
+                    <div class="delivery">
+                        <a href="#!"><img src="img/banner-delivery.jpg" alt="Доставка"></a>
+                    </div>
+                    <div>
+                        <a href="#!"><img src="img/banner-opt.jpg" alt="Оптовые закупки"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Items page -->
+        <section class="items-page common-section">
+            <div class="container">
+                <div class="items-page__categories-page common-section">
+                    <a class="items-page__categories active" href="">Новинки</a>
+                    <a class="items-page__categories" href="">Акционный товар</a>
+                </div>
+                <div class="flex-box gap items">
+                    <div class="link-block">
+                        <img src="img/banner-sale-block.jpg" alt="Распродажа">
+                        <a class="link-block__a-link a-link" href="#!">Смотреть</a>
+                    </div>
+                    <div class="item">
+                        <span class="new">Новинки</span>
+                        <img src="img/batteries.png" alt="Батарейки">
+                        <a href="#!">Батарейки батарейки батарейки батарейки батарейки батарейки батарейки</a>
+                        <p class="assortment">В наличии</p>
+                        <p class="price">53.75 грн</p>
+                    </div>
+                    <div class="item">
+                        <span class="new">Новинки</span>
+                        <img src="img/batteries.png" alt="Батарейки">
+                        <a href="#!">Батарейки батарейки батарейки батарейки батарейки батарейки батарейки</a>
+                        <p class="assortment">В наличии</p>
+                        <p class="price">53.75 грн</p>
+                    </div>
+                    <div class="item">
+                        <span class="new">Новинки</span>
+                        <img src="img/batteries.png" alt="Батарейки">
+                        <a href="#!">Батарейки батарейки батарейки батарейки батарейки батарейки батарейки</a>
+                        <p class="assortment">В наличии</p>
+                        <p class="price">53.75 грн </p>
+                    </div>
+                    <div class="item">
+                        <span class="new">Новинки</span>
+                        <img src="img/batteries.png" alt="Батарейки">
+                        <a href="#!">Батарейки батарейки батарейки батарейки батарейки батарейки батарейки</a>
+                        <p class="assortment">В наличии</p>
+                        <p class="price">53.75 грн</p>
+                    </div>
+                    <div class="item">
+                        <span class="new">Новинки</span>
+                        <img src="img/batteries.png" alt="Батарейки">
+                        <a href="#!">Батарейки батарейки батарейки батарейки батарейки батарейки батарейки</a>
+                        <p class="assortment">В наличии</p>
+                        <p class="price">53.75 грн</p>
+                    </div>
+                    <div class="item">
+                        <span class="new">Новинки</span>
+                        <img src="img/batteries.png" alt="Батарейки">
+                        <a href="#!">Батарейки батарейки батарейки батарейки батарейки батарейки батарейки</a>
+                        <p class="assortment">В наличии</p>
+                        <p class="price">53.75 грн</p>
+                    </div>
+                    <div class="link-block">
+                        <img src="img/banner-sale-block2.jpg" alt="Распродажа">
+                        <a class="link-block__a-link a-link" href="#!">Смотреть</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Information company -->
+        <section class="information common-section">
+            <div class="container flex-box information__wrapper">
+                <div class="information__item">
+                    <img src="img/delivery.svg" alt="Доставка">
+                    <p>Доставка товара по Украине</p>
+                </div>
+                <div class="information__item">
+                    <img src="img/medal-ribbons.svg" alt="Медаль">
+                    <p>Доставка товара по Украине</p>
+                </div>
+                <div class="information__item">
+                    <img src="img/pig.svg" alt="Поросёнок">
+                    <p>Доставка товара по Украине</p>
+                </div>
+                <div class="information__item">
+                    <img src="img/secure.svg" alt="Безопасность">
+                    <p>Доставка товара по Украине</p>
+                </div>
+            </div>
+        </section>
+        <!-- Company description -->
+        <section class="company-description">
+            <div class="container common-section-text">
+                <h2>Хозтовары оптом — все для дома, дачи по выгодным ценам!</h2>
+                <p>
+                    <b>Добро пожаловать в онлайн магазин оптовой и мелкооптовой продажи разнообразных товаров всех возможный категорий knopa.com.ua - идеальный выбор!</b>
+                </p>
+                <p>
+                    В ассортименте нашего магазина - лучшие товары широкого потребления. Здесь вы найдёте все самое необходимое для дома и офиса, для личного пользования и для бизнеса! Делайте заказ на сумму от 1000 гривен и наслаждайтесь преимуществами оптовой торговли! 
+                </p>
+                <h3>Кто мы?</h3>
+                <p>Всеукраинский оптовый магазин, который осуществляет продажи по САМЫМ низким ценам.</p>
+                <h3>Наша цель</h3>
+                <p>Предоставить каждому клиенту возможность приобретения по самой низкой цене.           </p>
+                <h3>Почему такие низкие цены</h3>
+                <p>Мы зарабатываем на товарообороте, а не за счет наценки.</p>
+                <p>
+                    Хозтовары — объемная группа товаров различного назначения, используемых в быту, для упрощения повседневных задач. В нашем магазине представлен огромный ассортимент, купить которые можно на максимально выгодных условиях мелким, средним, крупным оптом. Мы предлагаем взаимовыгодное сотрудничество владельцам розничных хозяйственных магазинов в Одессе, Киеве, Харькове, других городах Украины. В нашем интернет-магазине все для дома можно купить дешево, с уверенностью в качестве каждой товарной позиции!
+                </p>
+                <h2>Хозтовары оптом: 1000+ мелочей по приятным ценам!</h2>
+                <p>Наш магазин находится на оптовом рынке «7 Километр» (Одесса). Наличие на нашем складе, поэтому вам не придется неделями ждать поставку партии хозяйственных товаров. Мы предлагаем хозтовары оптом: </p>
+                <ul>
+                    <li>Для дома и интерьера.</li>
+                    <li>Для кухни. </li>
+                    <li>Для дачи и сада. </li>
+                    <li>Бытхимию в ассортименте.</li>
+                </ul>
+                <p>
+                    Покупка хозтоваров оптом может заинтересовать владельцев небольших супермаркетов, магазинов «1000 мелочей», точек на рынках, которые хотят расширить ассортимент за счет востребованных товаров для дома. Чтобы купить хозтовары дешево, достаточно воспользоваться функционалом нашего интернет-магазина. Мы предлагаем вещи хозяйственного назначения (принадлежности для уборки в доме, садовых работ, бытхимию, предметы для оформления интерьеров, пластиковые хозяйственные товары и мн. др.) по ценам от прямого поставщика продукции европейских, азиатских, отечественных производителей.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <section class="footer-content">
+            <div class="container flex-box footer-content">
+                <div class="footer-content__block">
+                    <img src="img/logo.png" alt="Логотип">
+                    <p><b>Лучшие цены <br> и отличный сервис!</b></p>
+                    <div class="footer-content__information"> 
+                        <div class="footer-content__time flex">
+                            <img src="img/time.png" alt="Иконка время">
+                            <p>Пн - чт:06:00-13:00 <br> Пт:выходной <br>Сб - вс:06-00-14:00</p>
+                        </div>
+                        <div class="footer-content__location flex">
+                            <img class="img-location" src="img/location.png" alt="Иконка локация">
+                            <p>пгт. A-----, <br> Рынок 7-км, <br>ул. P-----, офис 300</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-block">
+                    <ul>
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Скидки</a></li>
+                        <li><a href="">Батарейки</a></li>
+                        <li><a href="">Посуд</a></li>
+                        <li><a href="">Для дома</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block">
+                    <ul>
+                        <li><a href="#!">Новинки</a></li>
+                        <li><a href="#!">Скидки</a></li>
+                        <li><a href="#!">Батарейки</a></li>
+                        <li><a href="#!">Посуд</a></li>
+                        <li><a href="#!">Для дома</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block">
+                    <ul>
+                        <li><a href="#!">Новинки</a></li>
+                        <li><a href="#!">Скидки</a></li>
+                        <li><a href="#!">Батарейки</a></li>
+                        <li><a href="#!">Посуд</a></li>
+                        <li><a href="#!">Для дома</a></li>
+                    </ul>
+                </div>
+                <div class="footer-block">
+                    <ul>
+                        <li><a href="#!">Новинки</a></li>
+                        <li><a href="#!">Скидки</a></li>
+                        <li><a href="#!">Батарейки</a></li>
+                        <li><a href="#!">Посуд</a></li>
+                        <li><a href="#!">Для дома</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section> 
+        <section class="nav-full-burger" id="nav-full-burger">
+            <ul>
+                <li><a href="#!">Каталог товаров</a></li>
+                <li><a href="#!">% Все акционные товары</a></li>
+                <li><a href="#!"><span>New</span>Новые поступления</a></li>
+                <li><a href="#!"><img class="icon" src="img/telegram-color.png" alt="Иконка телеграм">Телеграм-канал "Cong"</a></li> 
+                <li><a href="#!">О магазине</a></li>
+                <li><a href="#!">Доставка и оплата</a></li>
+                <li><a href="#!">Гарантии</a></li>
+                <li><a href="#!">Вопрос-Ответ</a></li>
+                <li><a href="#!">Сотрудничество</a></li>
+                <li><a href="#!">Статьи</a></li>
+                <li><a href="#!">Новости</a></li>
+                <li><a href="#!">Контакты</a></li>
+            </ul>
+        </sectinon>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
