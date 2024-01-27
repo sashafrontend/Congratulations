@@ -234,6 +234,10 @@ a.a-link {
 
 
 // Header top
+.header {
+    position: relative;
+}
+
 .header-top {
     background-color: var(--color-light-gray);
     border: 1px solid var(--color-gray);
@@ -632,22 +636,6 @@ img {
     transform: translateY(10px);
 }
 
-.header.open .burger-btn span:nth-child(1) {
-    transform: translateY(0) rotate(45deg);
-}
-
-.header.open .burger-btn span:nth-child(2) {
-    opacity: 0;
-}
-
-.header.open .burger-btn span:nth-child(3) {
-    transform: translateY(0) rotate(-45deg);
-}
-
-.header.open .burger-btn span {
-    background-color: var(--color-pink);
-}
-
 .nav-full-burger {
     position: fixed;
     top: 0;
@@ -774,7 +762,7 @@ img {
         left: -250px;
         top: 0;
         width: 250px;
-        height: auto;
+        height: 550px;
         background-color: var(--color-white);
         padding: 70px 20px 20px 20px;
         transition: transform .5s;
