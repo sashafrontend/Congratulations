@@ -779,6 +779,7 @@ img {
     right: 15px;
   }
   .main-page {
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
